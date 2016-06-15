@@ -1,0 +1,139 @@
+
+<html>
+<head>
+	<title>Home</title>
+	
+	<style type="text/css">
+		body
+		{
+			padding-left:20px;
+		}
+	
+		h2
+		{
+			color : rgb(105, 51, 117);
+			margin-bottom: 50px;
+		}
+		
+		h3
+		{
+			color:#9A4BAD;
+		}
+		a
+		{
+			color: black;
+			font-weight: bold;
+		}
+		
+		
+		.wrapper
+		{
+			width : 845px;
+			min-height : 500px;
+			margin : auto;
+			/* background-color: gray; */  
+		}
+		
+		.wrapper .container
+		{
+			margin-bottom:20px;
+			min-height:400px;
+			border:20px solid #AD6CBD;
+			padding:10px;
+			text-align: center;
+		}
+		.container img.profile
+		{
+			width:130px;
+			height:150px;
+		}
+		
+		p.lastLines
+		{
+			color: rgb(105, 51, 117);
+			font-size: large;
+			font-weight: bold;
+		}
+		.highlight
+		{
+			background-color: yellow;
+		}
+		p.underline
+		{
+			text-decoration: underline;
+		}
+		
+		
+	</style>
+	
+</head>
+<body>
+<h2>
+	Dear Infogainers,
+</h2> 
+
+
+
+<div class="wrapper">
+	<img alt="banner" src="cid:banner"/>
+
+	#foreach ( $welcomeData in $welcomeDataList )
+		#if($welcomeData.maritalStatus == 'S')
+			#set( $maritalStatus = 'Single' )
+		#end
+		#if($welcomeData.sex == 'F')
+			#set( $sex = 'She' )
+		#else
+			#set( $sex = 'He' )
+		#end
+		<div class="container">
+			#if($sex == 'She')
+				<h3>${welcomeData.name} joins us as &lt profile &gt. Her primary skill set is ${welcomeData.primarySkill}</h3>
+			#else
+				<h3>${welcomeData.name} joins us as &lt profile &gt. His primary skill set is ${welcomeData.primarySkill}</h3>
+			#end		
+			<img alt="profile picture" src="cid:${welcomeData.applicationId}" class="profile"/>
+			<p>$sex holds a ${welcomeData.examination} from ${welcomeData.institute} </p>
+			#if(${welcomeData.companyNames.size()} == 1)
+				#if($sex == 'She')
+					<p>Prior to joining Infogain, her last assignment was with ${welcomeData.companyNames[0]}</p>
+				#else
+					<p>Prior to joining Infogain, his last assignment was with ${welcomeData.companyNames[0]}</p>
+				#end			
+			#elseif(${welcomeData.companyNames.size()} == 2)
+				#if($sex == 'She')
+					<p>Prior to joining Infogain, her last assignment was with ${welcomeData.companyNames[0]} prior to which she has worked with ${welcomeData.companyNames[1]}.</p>	
+				#else
+					<p>Prior to joining Infogain, his last assignment was with ${welcomeData.companyNames[0]} prior to which he has worked with ${welcomeData.companyNames[1]}.</p>	
+				#end			
+			#elseif(${welcomeData.companyNames.size()} == 3)
+				#if($sex == 'She')
+					<p>Previously she has worked with organizations like ${welcomeData.companyNames[2]} and ${welcomeData.companyNames[1]} and her last assignment was with ${welcomeData.companyNames[0]}.</p>	
+				#else
+					<p>Previously he has worked with organizations like ${welcomeData.companyNames[2]} and ${welcomeData.companyNames[1]} and his last assignment was with ${welcomeData.companyNames[0]}.</p>	
+				#end			
+			#end	
+			#if($sex == 'She')
+				<p>$sex is $maritalStatus, likes &lt Hobbies &gt and celebrates her birthday on ${welcomeData.dob}</p>
+			#else
+				<p>$sex is $maritalStatus, likes &lt Hobbies &gt and celebrates his birthday on ${welcomeData.dob}</p>
+			#end
+		</div>
+	#end
+	
+</div>
+	#if(${welcomeDataList.size()} > 1)
+		<p class="lastLines">Let us welcome them to Infogain family and wish them all success in their new assignment.</p>
+	#elseif(${welcomeDataList.size()} == 1)
+		#if($sex == 'She')
+			<p class="lastLines">Let us welcome her to Infogain family and wish her all success in her new assignment.</p>
+		#else
+			<p class="lastLines">Let us welcome him to Infogain family and wish him all success in his new assignment.</p>
+		#end
+	#end		
+	<p class="lastLines">Regards,
+	<br/>
+	HR For You</p>
+
+</body>
+</html>

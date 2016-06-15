@@ -1,0 +1,11 @@
+<html>
+<body>
+RMG approved following Employee(s):
+<ul>
+#foreach($employeeName in $employeeList)
+<li>$employeeName</li>
+#end
+</ul>
+
+</body>
+</html>

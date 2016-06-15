@@ -1,0 +1,13 @@
+<html>
+<body>
+HR rejected following Employee(s):
+<ul>
+#foreach($employeeName in $employeeList)
+<li>$employeeName</li>
+#end
+</ul>
+<br/>
+Reason :
+<p>$reason</p>
+</body>
+</html>

@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.1.xsd">
+
+	<!-- Enable Annotation based Declarative Transaction Management -->
+    <tx:annotation-driven proxy-target-class="true"
+        transaction-manager="transactionManager" />
+ 
+    <!-- Creating TransactionManager Bean, since JDBC we are creating of type 
+        DataSourceTransactionManager -->
+    <bean id="transactionManager"
+        class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+        <property name="dataSource" ref="dataSource" />
+    </bean>
+
+	<!-- <bean id="dataSource"
+		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+		<property name="driverClassName" value="oracle.jdbc.driver.OracleDriver" />
+		<property name="url" value="jdbc:oracle:thin:@//localhost:1521/xe" />
+		<property name="username" value="hr1" />
+		<property name="password" value="hr1" />
+	</bean> -->
+	
+	<!-- Initialization for data source -->
+   <!-- <bean id="dataSource" 
+      class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+      <property name="driverClassName" value="com.mysql.jdbc.Driver"/>
+      <property name="url" value="jdbc:mysql://localhost:3306/edoc"/>
+      <property name="username" value="root"/>
+      <property name="password" value="info123!"/>
+   </bean> -->
+	
+	<!-- <bean id="dataSource" 
+      class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+      <property name="driverClassName" value="com.microsoft.sqlserver.jdbc.SQLServerDriver"/>
+      <property name="url" value="jdbc:sqlserver://AMANTKUMAR\SQLEXPRESS:1433;DatabaseName=edoc;integratedSecurity=true"/>
+   </bean> -->
+	
+	<!-- <bean id="dataSource" 
+      class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+      <property name="driverClassName" value="net.sourceforge.jtds.jdbc.Driver"/>
+      <property name="url" value="jdbc:jtds:sqlserver://quasrv:1433/edoc"/>
+      <property name="username" value="sa"/>
+      <property name="password" value="info123!"/>
+   </bean>
+	 -->
+	 
+	
+	
+   	<bean id="userDaoImpl" 
+      class="com.infogain.edoc.dao.impl.UserDaoImpl">
+        <property name="dataSource" ref="dataSource"></property>
+   	</bean>
+   	
+   	<bean id="fileDataTemplate" 
+      class="com.infogain.edoc.dao.impl.FileDataDaoImpl">
+      <property name="dataSource" ref="dataSource" />    
+   	</bean>
+   	
+   	<bean id="fileCategoryTemplate" 
+      class="com.infogain.edoc.dao.impl.FileCategoryDaoImpl">
+      <property name="dataSource" ref="dataSource" />    
+   	</bean>
+	
+	<bean id="preEmpTemplate" 
+      class="com.infogain.edoc.dao.impl.PreEmployeeDaoImpl">
+      <property name="dataSource" ref="dataSource" />    
+   	</bean>
+  
+  	<bean id="empTemplate" 
+      class="com.infogain.edoc.dao.impl.EmployeeDaoImpl">
+      <property name="dataSource" ref="dataSource" />    
+   	</bean>
+        
+	<bean id="hrBgcTemplate" 
+      class="com.infogain.edoc.dao.impl.HrBgcDaoImpl">
+      <property name="dataSource" ref="dataSource" />    
+   	</bean>
+    
+    <bean id="empServiceTemplate" 
+      class="com.infogain.edoc.service.impl.EmployeeServiceImpl">
+      <property name="dataSource" ref="dataSource" />    
+   	</bean>
+    
+     <bean id="dataSource" 
+      class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+      <property name="driverClassName" value="${db.driverClassName}"/>
+      <property name="url" value="${db.url}"/>
+      <property name="username" value="${db.username}"/>
+      <property name="password" value="${db.password}"/>
+   </bean>
+</beans>

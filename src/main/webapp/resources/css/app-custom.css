@@ -1,0 +1,417 @@
+@charset "utf-8";
+
+/*----------------------
+Project: iTravel Project
+Version: 1.0
+
+Font Color #565656
+Blue Color #0094ce
+------------------------*/
+
+/* === Reset CSS to eliminate Browser Diffences ===  */
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, 
+address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var,
+dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-weight: inherit;
+	font-style: inherit;
+	font-size: 100%;
+	font-family: inherit;
+	vertical-align: baseline;
+}
+
+:focus {
+	outline: 0;
+}
+body {
+	line-height: 1;
+	color: black;
+	background: #ffffff;
+}
+ol, ul {
+	list-style: none;
+}
+table {
+	border-collapse: separate;
+	border-spacing: 0;
+}
+caption, th, td {
+	text-align: left;
+	font-weight: normal;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: "";
+}
+blockquote, q {
+	quotes: "" "";
+}
+
+*, *:before, *:after {
+  -webkit-box-sizing: border-box; 
+  -moz-box-sizing: border-box; 
+  box-sizing: border-box;
+}
+
+
+body {
+	font-family: "Arial", Tahoma, Verdana;
+	font-size: 12px;
+	color: #565656;
+	line-height: 18px;
+	background: #f6f6f6;
+}
+
+/* -- Main Sections --*/
+.app-header {
+	background: url("../images/header-repeat-bg.png") repeat-x top left;
+	height: 64px;
+	padding-top: 10px;
+}
+
+.app-content{
+	padding-top: 10px;
+}
+
+.app-footer{
+	text-align: right;
+	padding-top: 10px;
+	padding-bottom: 10px; 
+}
+
+/* -- Login Screen --*/
+.login-section {
+	height: 520px;
+	overflow: hidden;
+}
+
+.login-content {
+	padding-top: 130px;
+	padding-left: 60px;
+}
+
+.register-content {
+	padding-top:  60px;
+	padding-left: 60px;
+}
+
+.login-section .title {
+	font-family: "Helvetica";
+	font-weight: normal;
+	font-size: 30px;
+	color: #0094ce;
+}
+.login-section .sub-title {
+	font-size: 14px;
+	line-height: 24px;
+}
+
+.login-section .header-text {
+	padding: 0 0 30px 0;
+}
+
+.login-user{ 
+	background: url("../images/user-inputbox-bg.png") repeat-x top left; 
+	padding-left: 35px;
+}
+.login-password{ 
+	background: url("../images/password-inputbox-bg.png") repeat-x top left;
+	padding-left: 35px;
+}
+
+
+/* -- Main Menu -- */
+.main-menu {
+	background: url("../images/header-nav-bg.png") repeat-x top left;
+	border: none;
+	border-radius: 0;
+	min-height: 40px;
+}
+
+.app-content-login{
+	padding-top: 30px;
+}
+
+
+/* -- Bootstrap Overwrites -- */
+.navbar-nav>li>a {
+	padding-top: 9px;
+	padding-bottom: 9px;
+	text-transform: uppercase;
+	color: #ffffff;
+	margin-top: 1px;
+	margin-bottom: 1px;
+}
+
+.navbar-default .navbar-nav>.active>a{
+	color: #777;
+}
+
+.navbar-default .navbar-nav>li>a {
+	color: #ffffff;
+}
+
+
+/*-- Dashboard Table --*/
+.label-text {
+	line-height: 32px;
+}
+
+
+.recent-doc-list {
+	margin-top: 30px; 
+}
+
+.doc-requests {
+	margin-top: 10px;
+}
+
+/* -- Internal Page --*/
+
+.user-profile .app-panel-title, .user-bg .app-panel-title {
+	color: #0094ce;
+	font-size: 14px;
+	text-transform: uppercase;
+	float: none;
+	text-align: center;
+}
+
+.user-profile .app-panel-list li{
+	padding: 6px 0;
+	line-height: 14px;
+}
+
+.user-profile .app-panel-list li:last-child {
+	border-bottom: none;
+}
+
+
+
+.doc-details .alert, .user-profile .alert{
+	padding: 10px 15px 10px 15px;
+}
+
+.doc-details .alert-dismissable .close, .alert-dismissible .close {
+	right: 0px;
+}
+
+
+.doc-table {
+	border: 1px solid #d1d1d1;
+	margin-bottom: 20px;
+}
+
+.doc-table .table {
+	margin-bottom: 0px;
+}
+
+
+.approve { color: #53d769;}
+.pending { color: #f49e41;}
+.rejected { color: #f1593a;}
+.not-uploaded { color: #d0cfcf;}
+
+
+.doc-status { padding: 10px 20px;}
+
+.approve-status { text-align: center; } 
+.text-large{ font-size: 16px;}
+
+
+
+.modal .title { font-size: 15px; border-bottom: 1px solid #b8b8b8; padding-bottom: 3px; margin-bottom: 10px;}
+.modal-title-h1 { font-size: 14px; padding-bottom: 10px;}
+
+/* -- Global Styles -- */
+.app-content-box {
+	background-color: #ffffff;
+	border: 1px solid #d1d1d1;
+	border-radius: 4px;
+	-moz-border-radius: 4px;
+	-webkit-border-radius: 4px;
+	overflow: hidden;
+}
+
+.app-panel-header {
+	border-bottom: 1px solid #d1d1d1;
+	overflow: auto;
+}
+
+.app-panel-title {
+	color: #0094ce;
+	font-size: 16px;
+	padding: 10px 16px;
+	float: left;
+	white-space: nowrap;
+}
+
+.app-panel-content {
+	padding: 10px 16px;
+	overflow: auto;
+}
+
+.app-panel-list {
+	margin: 0;
+	padding: 0;
+}
+.app-panel-list li {
+	padding: 3px 0;
+	border-bottom: 1px solid #f3f3f3;
+}
+
+
+.app-panel-list .defination-term {
+	font-size: 12px;
+	color: #333333;
+	text-transform: uppercase;
+	clear: both;
+}
+
+.app-panel-list .defination-desc{
+	color: #959595;
+	font-size: 12px;
+}
+
+
+.uppercase {
+	text-transform: uppercase;
+}
+
+
+.date-text {
+	color: #999898;
+	display: block;
+}
+
+.app-panel-btn-group {
+	float: right;
+}
+
+ /* -- Bootsrap Overright -- */
+.app-panel-btn-group .btn {
+	padding: 9px 14px;
+	border-radius: 0;
+	border-top: 1px solid transparent;
+	border-bottom: 1px solid transparent;
+}
+
+.app-panel-btn-group .btn:last-child {
+	border-right: 1px solid transparent;
+}
+
+.table th {
+	font-size: 13px;
+	background: url("../images/th-bg.png") repeat-x top left;
+	white-space: nowrap;
+}
+
+.table>tbody>tr>td {
+	vertical-align: middle;
+}
+
+.badge.bg-warning {
+	background-color: #e39129;
+}
+
+.filters-sections {
+	padding: 10px 16px;
+	background-color: #ebf6f8;
+	border-bottom: 1px solid #d1d1d1;
+}
+
+.icon-notation>li>img {
+	float: left;
+	padding-right: 5px;
+}
+
+.modal .modal-title {
+	font-size: 16px;
+	text-align: center !important;
+}
+
+.modal .modal-body {
+	font-size: 13px;
+}
+
+.modal-footer {
+	text-align: center !important;
+}
+
+.action-btn, .nowrap {
+	white-space: nowrap;
+}
+.loading{
+        position: absolute;
+        z-index: 999 !important;
+        background: #dedddd url("../images/loading.gif") no-repeat center center;
+
+}
+
+/* Added On 25/2/15 */
+.user-bg{
+	margin-bottom: 20px;
+}
+
+.user-profile{
+	min-height: 368px;
+}
+
+.doc-icon{
+	font-size:16px;
+}
+
+/* Added on 4 March 2015 */
+
+.tab-content { 
+	padding-bottom: 10px;
+}
+
+.nav-tabs a{
+	font-size: 13px !important;
+}
+
+.tab-pane .title{
+	font-size: 13px !important;
+	color: #337ab7 !important;
+	margin-bottom: 5px;
+}
+
+.tab-pane .inputDate{
+	width: 75px;
+	float: left;
+}
+.tab-pane .inputDate:first-child{
+	margin-right: 10px;
+}
+
+.tab-pane .textarea{
+	height: 100px;
+}
+
+.tab-content  .control-label { 
+	text-align: left;
+}
+.tab-content label{
+	line-height: 20px;
+	font-size: 13px;
+}
+.tab-pane{ 
+	padding: 10px 0;
+}
+
+.form-group-table .form-group {
+	margin-bottom: 3px;
+}
+
+.tab-content .action-btn{
+	padding: 40px 0 0 0;
+}
+
+.msg{
+	color:red;
+	font-weight: bold;
+}
+
